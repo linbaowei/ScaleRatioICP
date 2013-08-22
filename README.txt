@@ -83,10 +83,10 @@ the ratio of scales.
 
 
 
-		How to compile 3D keypoint generation project
+		How to compile ContributionRateGeneration project
 		---------------------------------------------------
 			in order to compile Contribution rate project, at least, OpenCV 2.4.0 and PCL 1.6 are necessary.
-			bash-4.2$  cd /3ContributionRateGeneration	//depand on where you save our provided files, please entrance this folder in advance
+			bash-4.2$  cd /ContributionRateGeneration	//depand on where you save our provided files, please entrance this folder in advance
 			bash-4.2$  mkdir build
 			bash-4.2$  cd build
 			bash-4.2$  cmake ..
