@@ -15,7 +15,7 @@ Contact address: lin-bao-wei@hotmail.com
 	In this paper we propose a method for matching the scales of 3D point clouds. 3D point sets of the same scene obtained by 3D reconstruction techniques usually differ in scale. To match scales, we estimate the ratio of scales of two given 3D point clouds. By performing PCA of spin images over different scales of two point clouds, two sets of cumulative contribution rate curves are generated. Such sets of curves can be considered to characterize the scale of the given 3D point clouds. To find the scale ratio of two point clouds, we register the two sets of curves by using a variant of ICP that estimates
 the ratio of scales.	
 	If you download the files for the proposed method and uncompress is, there are 2 folders as follows:
-		1. folder ContributionRateGeneration	//C++ project for generating contribution Rate
+		1. folder ContributionRateGeneration		//C++ project for generating contribution Rate
 		2. folder Scale_Ratio_ICP			//Matlab project for estimating scale ratio of two point clouds
 	They are explained in following parts.
 
