@@ -1,0 +1,42 @@
+project(keyscale_icip)
+
+cmake_minimum_required(VERSION 2.6 FATAL_ERROR)
+SET(CMAKE_BUILD_TYPE Debug)
+INCLUDE_DIRECTORIES(/usr/include/opencv)
+find_package(PCL 1.6 REQUIRED)
+include_directories(${PCL_INCLUDE_DIRS})
+link_directories(${PCL_LIBRARY_DIRS})
+add_definitions(${PCL_DEFINITIONS})
+
+add_executable(scalenewfile main.cpp overwrapratio.cpp rply.c)
+target_link_libraries (scalenewfile opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(segmentation cluster_extraction.cpp overwrapratio.cpp rply.c)
+target_link_libraries (segmentation ${PCL_LIBRARIES} ltir opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+# add_executable(pca-bin pca-bin.cpp overwrapratio.cpp rply.c)
+# target_link_libraries (pca-bin ltir opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(scalesextract scalesextract.cpp  rply.c)
+target_link_libraries (scalesextract ${PCL_LIBRARIES} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(addnoises addnoises.cpp rply.c)
+
+add_executable(createply createply.cpp rply.c)
+
+add_executable(downsamplingPoints sample_randomly_ply_points.cpp rply.c)
+
+add_executable(icp icp_min.cpp icp_lin.cpp overwrapratio.cpp rply.c)
+target_link_libraries (icp ${PCL_LIBRARIES} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(officalicp officalicp.cpp officalicpmain.cpp overwrapratio.cpp rply.c)
+target_link_libraries (officalicp ${PCL_LIBRARIES} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(meshresolution meshresolution.cpp overwrapratio.cpp rply.c)
+target_link_libraries (meshresolution  ${PCL_LIBRARIES} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(standardDevision standardDevision.cpp overwrapratio.cpp rply.c)
+target_link_libraries (standardDevision  ${PCL_LIBRARIES} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
+
+add_executable(spinimageview spinimageview.cpp  rply.c)
+target_link_libraries (spinimageview ${PCL_LIBRARIES} opencv_core opencv_imgproc opencv_calib3d opencv_video opencv_features2d opencv_ml opencv_highgui opencv_objdetect opencv_contrib opencv_legacy ANN )
