@@ -48,7 +48,7 @@ the ratio of scales.
 * How to implement Scale Ratio ICP method
 -------------------------------------------------------------------
 	In order to implement scale ratio ICP method, contribution rates of the spin images of the 3D points must be provided.  
-	First we explain how to use contribution rate generation method. (The details please refer to Tamaki et al.,"Scale matching of 3D point clouds by finding keyscales with spin images", in ICPR, 2010, pp. 3480-3483.)
+	First we explain how to use contribution rate generation method. (The details please refer to Tamaki et al., "Scale matching of 3D point clouds by finding keyscales with spin images", in ICPR, 2010, pp. 3480-3483.)
 		usage:
 		---------------------------------------------------
 			./scalesextract [intput1.ply] [intput2.ply] [bin]			//input.ply : ply files with points and normals.
